@@ -1,0 +1,196 @@
+Array in dsa ....
+
+
+1....reverse the number.
+answer : 
+
+#include<iostream>
+using namespace std;
+
+int rev(int length,int a[]){
+     int rev=0;
+     for(int i=length-1;i>=0;i--){
+          rev=rev*10+a[i];  
+     }
+     return rev;
+}
+int main(){
+     int length;
+     cout<<"Enter the size : ";
+     cin>>length;
+     int a[length];
+     for(int i=0;i<length;i++){
+          cout<<"Enter the number : ";
+          cin>>a[i];
+          
+     }
+     cout<<rev(length,a);
+}
+
+
+
+2....calculate rev and product of all number in an array.
+answer : 
+
+#include<iostream>
+using namespace std;
+
+int rev(int length,int a[]){
+     int rev=0;
+     for(int i=length-1;i>=0;i--){
+          rev=rev*10+a[i];  
+     }
+     return rev;
+}
+int product(int length,int a[]){
+    int pro=1;
+    for(int i=0;i<length;i++){
+        pro=pro*a[i];
+    }
+    return pro;
+}
+int main(){
+     int length;
+     cout<<"Enter the size : ";
+     cin>>length;
+     int a[length];
+     for(int i=0;i<length;i++){
+          cout<<"Enter the number : ";
+          cin>>a[i];
+          
+     }
+     cout<<"The reversed ="<<rev(length,a)<<endl;;
+     cout<<"The product = "<<product(length,a);
+}
+
+
+
+3....swap the max and min number of an array.
+answer : 
+
+#include<iostream>
+using namespace std;
+int swap(int length,int a[]){
+    int max=0;
+    for(int i=0;i<length;i++){
+        if(a[i]>a[max]){
+            max=i;
+
+        }
+    }
+    
+    int min=0;
+    for(int i=0;i<length;i++){
+        if(a[i]<a[min]){
+            min=i;
+        }
+    }
+    
+    int temp=a[max];
+    a[max]=a[min];
+    a[min]=temp;
+    for(int i=0;i<length;i++){
+        cout<<a[i]<<" ";
+    }
+
+}
+
+int main(){
+    int length;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        cin>>a[i];
+    }
+
+    cout<<swap(length,a);
+
+
+    
+}
+
+
+4....print all unique values in array.
+answer :
+
+#include<iostream>
+using namespace std;
+
+int unique(int length,int a[]){
+    
+    for(int i=0;i<length;i++){
+        int count=0;
+        for(int j=0;j<length;j++){
+            if(a[i]==a[j]){
+                count++;
+            }
+        }
+        if(count==1){
+            cout<<a[i]<<" ";
+        }
+    }
+
+}
+
+int main(){
+    int length;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        cin>>a[i];
+    }
+    unique(length,a);
+
+}
+
+
+5....print intersection of two array.
+answer : 
+
+#include<iostream>
+using namespace std;
+
+int first(int length,int a[],int length2,int b[]){
+    for(int i=0;i<length;i++){
+        for(int j=0;j<length2;j++){
+            if(a[i]==a[j]){
+                cout<<a[i]<<" ";
+            }
+
+        }
+
+    }
+    
+    
+
+}
+
+
+int main(){
+    int length;
+    cout<<"Enter the size of first array : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the number : ";
+        cin>>a[i];
+    }
+    int length2;
+    cout<<"Enter the size of second array : ";
+    cin>>length2;
+    int b[length2];
+    for(int j=0;j<length2;j++){
+        cout<<"Enter the number : ";
+        cin>>b[j];
+    }
+    first(length,a,length2,b);
+
+
+}
+
+
+
