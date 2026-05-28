@@ -1,0 +1,46 @@
+leet code questions ....
+
+1....SINGLE NUMBER .
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+answer : 
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ans=0;
+        for(int i: nums){
+            ans=ans^i;
+        }
+        return ans;
+        
+    }
+};
+
+
+2....palindrome number .
+Given an integer x, return true if x is a palindrome, and false otherwise.
+
+answer : 
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        long long rev=0;
+        int temp=x;
+        int digit;
+        for(;x>0;x=x/10){
+            digit=x%10;
+            rev = rev * 10 + digit; 
+        }
+        if(rev==temp){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+};
+
+
