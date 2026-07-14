@@ -1,0 +1,33 @@
+<<<<----Rotate Array---->>>>
+
+answer :
+
+
+#include<iostream>
+using namespace std;
+int main(){
+    int length;
+    cout<<"Enter the size : ";
+    cin>>length;
+    int a[length];
+    for(int i=0;i<length;i++){
+        cout<<"Enter the numbers : ";
+        cin>>a[i];
+    }
+    int k;
+    cout<<"Enter the position do you want reverse : ";
+    cin>>k;
+    k=k%length;
+    for(int i=0;i<k;i++){
+        int first=a[0];
+        for(int j=0;j<length-1;j++){
+            a[j]=a[j+1];
+        }
+        a[length-1]=first;
+    }
+    cout<<"Array after rotate ";
+    for(int i=0;i<length;i++){
+        cout<<a[i]<<" ";
+    }
+    
+}
